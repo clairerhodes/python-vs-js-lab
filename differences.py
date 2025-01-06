@@ -38,6 +38,14 @@ getName()
 #   alert(reverse);
 # };
 
+def reverseIt():
+    string = "a man, a plan, a canal, fremeies!"
+    reverse = ""
+    for i in range(len(string)):
+        reverse += string[len(string) - (i + 1)]
+    print(reverse)
+reverseIt()
+
 
 
 
@@ -61,6 +69,17 @@ getName()
 #   alert("a is now " + a + ", and b is now " + b);
 # };
 
+def swapEm():
+    a = 10
+    b = 30
+    temp = b
+    b = a
+    a = temp
+    
+    print("a is now " + str(a) + ", and b is now " + str(b) )
+swapEm()
+
+
 
 
 
@@ -76,7 +95,7 @@ getName()
 #   if (ary.length == 0) { return 1; };
 
 #   let total = 1;
-#   // let total = ary[0];
+#    // let total = ary[0];
 
 #   for (let i=0; i < ary.length; i++) {
 #     total = total * ary[i];
@@ -84,6 +103,18 @@ getName()
 
 #   return total;
 # };
+
+def multipleArray(ary):
+    if len(ary) == 0:
+        print(1)
+    else:
+        total = 1
+        for num in ary:
+            # total = total * num
+            total *= num
+        print(total)
+multipleArray([11, 22, 33])
+
 
 
 
@@ -108,6 +139,19 @@ getName()
 #   }
 # }
 
+def fizzbuzzer(x):
+    if x%(3*5) == 0:
+        print('fizzbuzz')
+    elif x%3 == 0:
+        print('fizz')
+    elif x%5 == 0:
+        print('buzz')
+    else:
+        print('archer')
+
+fizzbuzzer(30)
+
+
 
 
 
@@ -131,6 +175,21 @@ getName()
 #   alert(fibs[fibs.length - 1] + " is the fibonacci number at position " + num);
 # };
 
+def nthFib():
+    fibs = [1, 1]
+    num = input("which fibonacci number do you want?")
+
+    while (len(fibs) < int(num)):
+        length = len(fibs)
+        nextFib = fibs[-2] + fibs[-1]
+        fibs.append(nextFib)
+    
+    print("{fibs[-1]} is the fibonacci number at position" + num)
+    # print("{fibs[-1]} is the fibonacci number at position {num}")
+nthFib()
+
+
+
 
 
 
@@ -151,6 +210,13 @@ getName()
 #   }
 #   return -1;
 # };
+
+def searchArray(array, value):
+    for item in array:
+        if item == value:
+            return True
+    return -1
+searchArray([22, 11, 44, 88], 11)
 
 
 
@@ -173,6 +239,13 @@ getName()
 #   }
 #   return true;
 # };
+
+def isPalindrome(str):
+    for i in range(len(str) / 2):
+        if str(i) != str[len(str) - i - 1]:
+            return False
+    return True
+isPalindrome("pookianna") 
 
 
 
@@ -199,7 +272,15 @@ getName()
 #   return false;
 # };
 
-
+def hasDupes(arr):
+    obj = {}
+    for i in arr:
+        if i in obj:
+            return True
+        else:
+            obj[i] = True
+    return False
+hasDupes([1, 4, 11, 22, 4, 420, 69])
 
 
 
